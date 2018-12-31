@@ -29,9 +29,9 @@ class TodoListViewController: UITableViewController {
         newItem3.title = "Find Ben"
         itemArray.append(newItem3)
         
-//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-//            itemArray = items
-//        }
+        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+            itemArray = items
+        }
     }
     
     //MARK - TableView DataSource Methods
@@ -74,7 +74,6 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             // When user clicks Add Item button on UIAlert
             if let textToAdd = textField.text {
-                
                 
                 let newItem = Item()
                 newItem.title = textToAdd
