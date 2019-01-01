@@ -10,8 +10,8 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     
+    //MARK: - Properties
     var itemArray = [Item]()
-    
     let defaults = UserDefaults()
 
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class TodoListViewController: UITableViewController {
         }
     }
     
-    //MARK - TableView DataSource Methods
+    //MARK: - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
@@ -53,7 +53,7 @@ class TodoListViewController: UITableViewController {
         return cell
     }
     
-    //MARK - TableView Delegate Methods
+    //MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -64,7 +64,7 @@ class TodoListViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    //MARK - Add New Items
+    //MARK: - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
